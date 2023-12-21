@@ -1,38 +1,109 @@
 
 @host = http://127.0.0.1:5000
 
-### Create a new item
+### Create/Add a new user
 POST {{host}}/users
 Content-Type: application/json
 
 
 {
-    "name": "CSIT327",
-    "email": "csit327@cit.edu",
+    "username": "TINAMBAN GROUP",
+    "email": "tinamban@cit.edu",
     "password": "123456"
 }
 
 
-### Read the list
+### Read the list of users
 
 GET {{host}}/users
 
 Content-Type: application/json
 
-### Read a single item by id
+### Read a single user by id
 GET {{host}}/users/4
 
-### Update an item
+### Update a user
 PUT {{host}}/users/4
 Content-Type: application/json
 
 {
-    "name": "CIT Doee",
-    "email": "cit.doe@gmail.com",
+    "username": "GROUP TINAMBAN",
+    "email": "group.tinamban@gmail.com",
     "password": "654321"
 }
 
 
-### Delete an item
-DELETE {{host}}/users/2
+### Delete a user
+DELETE {{host}}/users/4
 Content-Type: application/json
+
+
+### BOOK ###
+
+### Create/Add a new book
+POST {{host}}/books
+Content-Type: application/json
+
+
+{
+    "title": "Three Little Ducklings",
+    "author": "J. Doe King",
+    "price": 5.99
+}
+
+
+### Read the list of books and check its availability
+
+GET {{host}}/books
+
+Content-Type: application/json
+
+### Read a single book by id
+GET {{host}}/books/4
+
+### Update a book
+PUT {{host}}/books/4
+Content-Type: application/json
+
+{
+    "title": "The Hunger Games",
+    "author": "Suzanne Collins",
+    "price": 35.99
+}
+
+
+### Delete a book
+DELETE {{host}}/books/4
+Content-Type: application/json
+
+### ORDER ###
+
+### Create/Add a new order
+POST {{host}}/orders/2/2
+Content-Type: application/json
+
+
+{
+    "quantity": 1
+}
+
+### Read the list of order
+GET {{host}}/orders
+Content-Type: application/json
+
+### Read a single order by id
+GET {{host}}/orders/1
+
+### Update an order
+PUT {{host}}/orders/2
+Content-Type: application/json
+
+{
+    "quantity": 5
+}
+
+
+### Delete an order
+DELETE {{host}}/orders/1
+Content-Type: application/json
+
