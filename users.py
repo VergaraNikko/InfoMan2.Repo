@@ -1,58 +1,54 @@
-from users import get_all_users, get_user_by_id, create_user, update_user, delete_user
-
-books = [
+users = [
     {
         "id": 1,
-        "title": "The Great Gatsby",
-        "author": "F. Scott Fitzgerald",
-        "price": 15.99,
-        "availability": True  # Initially in stock
+        "username": "John",
+        "email": "john@doe.com",
+        "password": "123456"
     },
     {
         "id": 2,
-        "title": "To Kill a Mockingbird",
-        "author": "Harper Lee",
-        "price": 12.99,
-        "availability": True
+        "username": "Jane",
+        "email": "jane@doe.com",
+        "password": "654321"
     },
     {
         "id": 3,
-        "title": "1984",
-        "author": "George Orwell",
-        "price": 10.99,
-        "availability": False  # Initially out of stock
+        "username": "Joe",
+        "email": "joe@doe.com",
+        "password": "123456"
     }
-]
+    ]
 
-def create_book(data):
-    data["id"] = books[-1]["id"] + 1
-    data["availability"] = True  # By default, a newly added book is considered in stock
-    books.append(data)
+def create_user(data):
+    data["id"] = users[-1]["id"] + 1
+    users.append(data) # @TODO - replace this with a databawse call INSERT
     return data
 
-def get_all_books():
-    return books
+def get_all_users():
+    # @TODO - replace this with a databawse call SELECT
+    return users
 
-def get_book_by_id(book_id):
-    for book in books:
-        if book["id"] == int(book_id):
-            return book
+def get_user_by_id(id):
+    # @TODO - replace this with a databawse call SELECT
+    for user in users:
+        if user["id"] == int(id):
+            return user
     return None
 
-def update_book(book_id, data):
-    for book in books:
-        if book["id"] == int(book_id):
-            book["title"] = data["title"]
-            book["author"] = data["author"]
-            book["price"] = data["price"]
-            return book
+def update_user(id, data):
+    # @TODO - replace this with a databawse call UPDATE
+    for user in users:
+        if user["id"] == int(id):
+            user["username"] = data["username"]
+            user["email"] = data["email"]
+            user["password"] = data["password"]
+            return user
     return None
 
-def delete_book(book_id):
-    for index, book in enumerate(books):
-        if book["id"] == int(book_id):
-            books.pop(index)
+def delete_user(id):
+    # @TODO - replace this with a databawse call DELETE
+    for index, user in enumerate(users):
+        if user["id"] == int(id):
+            users.pop(index)
             return True
     return False
-
-
