@@ -1,3 +1,8 @@
+## GROUP MEMBERS ##
+# JAMES NIKKO VERGARA
+# ZAER MICHAEL VANZUELA
+# FLORENZ MARIE MIER
+
 from flask import Flask, request, jsonify
 from books import get_all_books, get_book_by_id, create_book, update_book, delete_book
 from users import get_all_users, get_user_by_id, create_user, update_user, delete_user
