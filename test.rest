@@ -27,8 +27,8 @@ PUT {{host}}/users/4
 Content-Type: application/json
 
 {
-    "username": "GROUP TINAMBAN",
-    "email": "group.tinamban@gmail.com",
+    "username": "James Lennon",
+    "email": "Lennon.James@gmail.com",
     "password": "654321"
 }
 
@@ -79,12 +79,12 @@ Content-Type: application/json
 ### ORDER ###
 
 ### Create/Add a new order
-POST {{host}}/orders/2/2
+POST {{host}}/orders/1/1
 Content-Type: application/json
 
 
 {
-    "quantity": 1
+    "quantity": 2
 }
 
 ### Read the list of order
@@ -99,11 +99,10 @@ PUT {{host}}/orders/2
 Content-Type: application/json
 
 {
-    "quantity": 5
+    "quantity": 3
 }
 
 
 ### Delete an order
-DELETE {{host}}/orders/1
+DELETE {{host}}/orders/2
 Content-Type: application/json
-
